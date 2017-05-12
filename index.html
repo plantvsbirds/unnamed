@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>unnamed</title>
+  <link rel="stylesheet" href="https://bootswatch.com/solar/bootstrap.min.css">
+  <script src="https://vuejs.org/js/vue.js"></script>
+  <style>
+    .fix {
+      overflow: hidden;
+    }
+    textarea {
+      font-family: Palatino, Garamond, Bookman, Avant Garde;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Unnamed</h1>
+    <h3>this project is not unnamed. it's called 'unnamed'. Unnamed is a modern web solution for tracking dark traffic.</h3>
+    <h3>Any web page served with Unnamed middleware will include certain user info. When a user copy certain paragraph of text and distribute it on other channel, as long as it's long enough, user info can be retrived from the copied paragraph, ideally only by admin of the site.</h3>
+    <h3>This is only a small demo for Unnamed. Unnamed could also track image & screenshot using FFT. Here we have a text version and a simple scheme with Unicode confusion table, crafted by the team(Hong Lin).</h3>
+  </div>
+  <div class="container-fluid row" id="app">
+    <div class="col-sm-6">
+      <h2>Viewer</h2>
+      
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Original Text
+        </div>
+        <div class="panel-body">
+          <textarea rows="10" class="form-control" v-model="origText"></textarea>
+        </div>
+      </div>
+      
+      <div class="panel panel-default">
+        <div class="panel-heading form-inline fix">
+          Encoded with User ID (1~65535) <input type="number" class="form-control input-sm pull-right" min="1" max="65535" v-model="userName">
+        </div>
+        <div class="panel-body">
+          <textarea rows="10" class="form-control" v-model="encode(origText, userName)"></textarea>
+        </div>
+        <div class="panel-footer">
+          <span class="label label-default">Tip</span>
+          Copy the text over to decode box, see the user id. It should find the userid given long enough encoded content.
+          <br>
+          The encoding and decoding can both work in offline environment, and on different machine.
+        </div>
+      </div>
+      
+    </div>
+    <div class="col-sm-6">
+      <h2>Admin(decoder)</h2>
+      
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Decode text here
+        </div>
+        <div class="panel-body">
+          <textarea placeholder="Paste here....." rows="10" class="form-control" v-model="userInput"></textarea>
+        </div>
+        <div class="panel-footer">
+          Best Guess: 
+          <span class="label label-success" v-text="guess(userInput)">你娘的</span>
+        </div>
+      </div>
+      
+      <div class="panel panel-default fix">
+        <div class="panel-heading fix">
+          Functions
+        </div>
+        <div class="panel-body">
+          <div class="form-group">
+            <label>Lookup a Char</label>
+            <input type="text" class="form-control" length="1" v-model="testChar">
+            <span type="text" class="form-control" length="1" v-text="lookup(testChar)"></span>
+          </div>
+          <div class="form-group">
+            <label>Match</label>
+            <input type="text" class="form-control" length="1" v-model="testText">
+            <input type="text" class="form-control" length="1" v-model="testBin">
+            <span type="text" class="form-control" length="1" v-text="match(testText, testBin)"></span>
+          </div>
+          <div class="form-group">
+            <label>Encode</label>
+            <div class="input-group">
+              <div class="input-group-addon">Original text</div>
+              <input type="text" class="form-control" length="1" v-model="testOrigText">
+            </div>
+            <div class="input-group">
+              <div class="input-group-addon">Payload</div>
+              <input type="text" class="form-control" length="1" v-model="testOrigBin">
+            </div>
+          </div>
+          <p v-text="encode(testOrigText, testOrigBin)"></p>
+          <div class="form-group">
+            <label>Decode</label>
+            <input type="text" class="form-control" length="1" v-model="decode(encode(testOrigText, testOrigBin))">
+          </div>
+          
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <script src="./src/one.js"></script>
+</body>
+</html>
