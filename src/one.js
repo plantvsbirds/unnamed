@@ -105,7 +105,7 @@ Excerpt From: Johann Wolfgang von Goethe. “Faust.” iBooks. https://itun.es/u
     testBin  : '120489182904182903',
     testOrigText : 'opaqueopaqueopaqueopaqueopaqueopaqueopaqueopaqueopaqueopaqueopaqueopaqueopaqueopaqueopaqueopaqueopaqueopaqueopaqueopaqueopaqueopaqueopaqueopaqueopaqueopaque',
     testOrigBin  : '101010100100',
-    userInput : 'ораquеоpaqueоpаqueорaquеοраqueoраquеοрaqueopаqueoрaqueopaqueopaqueopaqueοрaquеοраqueopaquеopаqueорaquеοраqueoраquеοрaqueopаqueoрaqueopaqueopaqueopaqueοрaquе',
+    userInput : '',
   },
   methods  : {
     lookup, encode, decode, match, guess
