@@ -99,7 +99,7 @@ First drives out the soul[…]”
 
 Excerpt From: Johann Wolfgang von Goethe. “Faust.” iBooks. https://itun.es/us/JuGvD.l
 `,
-    userName : '12012',
+    userName : Math.round (1 + Math.random()*65534),
     testChar : 'Α',
     testText : 'opaque',
     testBin  : '120489182904182903',
