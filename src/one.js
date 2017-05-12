@@ -101,10 +101,10 @@ Excerpt From: Johann Wolfgang von Goethe. “Faust.” iBooks. https://itun.es/u
 `,
     userName : Math.round (1 + Math.random()*65534),
     testChar : 'Α',
-    testText : 'opaque',
-    testBin  : '120489182904182903',
+    testText : 'e',
+    testBin  : '01010101011',
     testOrigText : 'opaqueopaqueopaqueopaqueopaqueopaqueopaqueopaqueopaqueopaqueopaqueopaqueopaqueopaqueopaqueopaqueopaqueopaqueopaqueopaqueopaqueopaqueopaqueopaqueopaqueopaque',
-    testOrigBin  : '101010100100',
+    testOrigBin  : '2',
     userInput : '',
   },
   methods  : {
